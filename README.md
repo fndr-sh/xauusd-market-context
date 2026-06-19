@@ -65,7 +65,10 @@ xau-lfx-api --help
 ```
 
 ## Quickstart with sample data
+### Static Demo Preview
+![Static Demo Page View](docs/demo_screenshot.png)
 
+*To refresh or regenerate this static demo site view locally using synthetic data fixtures, run:*
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
