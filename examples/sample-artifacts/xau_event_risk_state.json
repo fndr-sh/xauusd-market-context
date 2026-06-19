@@ -1,0 +1,22 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241182+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "risk_state": "CONTEXT",
+  "event_count": 2,
+  "high_impact_events": [
+    {
+      "ts_utc": "2026-06-22T07:00:00+00:00",
+      "currency": "USD",
+      "impact": "HIGH",
+      "title": "Sample high impact USD event",
+      "event_policy": "risk_context_only_no_direction_prediction"
+    }
+  ],
+  "near_high_impact_events": [],
+  "note": "Event CSV loaded. Events are used only as risk context.",
+  "confidence_cap": 0.75,
+  "quality_flags": [
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241168+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "pressure_state": "CONTEXT",
+  "drivers": [],
+  "note": "Macro pressure disabled until explicit sources are configured.",
+  "confidence_cap": 0.75,
+  "quality_flags": [
+    "MACRO_SOURCES_NOT_CONFIGURED",
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

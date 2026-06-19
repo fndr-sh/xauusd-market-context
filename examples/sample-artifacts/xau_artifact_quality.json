@@ -1,0 +1,20 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241284+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "status": "OK",
+  "quality_score": 98.43,
+  "quality_grade": "A",
+  "freshness_score": 98.85,
+  "coverage_score": 100.0,
+  "schema_score": 100.0,
+  "session_score": 100.0,
+  "spread_score": 86.05,
+  "event_score": 100.0,
+  "source_count": 2,
+  "warnings": [
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ],
+  "errors": [],
+  "confidence_cap": 0.75
+}

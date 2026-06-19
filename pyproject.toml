@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xau-lfx-external-data-foundation"
+version = "1.4.0"
+description = "Monitor-only XAUUSD local data artifact generator for audited market-context research."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [
+  { name = "LFX Research Maintainers" }
+]
+keywords = [
+  "xauusd",
+  "market-data",
+  "mt5",
+  "research",
+  "market-context",
+  "tradingview",
+  "monitor-only"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+dependencies = [
+  "fastapi>=0.110.0",
+  "uvicorn>=0.27.0",
+  "pydantic>=2.6.0"
+]
+
+license-files = ["LICENSE", "NOTICE"]
+
+[project.urls]
+Homepage = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation"
+Repository = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation"
+Issues = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation/issues"
+Documentation = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation/tree/main/docs"
+
+[project.scripts]
+xau-lfx = "xau_lfx.pipeline:main"
+xau-lfx-api = "xau_lfx.web:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xau_lfx*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

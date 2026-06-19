@@ -1,0 +1,25 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241056+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "freshness_score": 0.9885,
+  "coverage_score": 1.0,
+  "schema_score": 1.0,
+  "source_count": 2,
+  "missing_field_count": 0,
+  "dispersion_score": 0.0,
+  "session_completeness": 1.0,
+  "spread_stability": 0.8605,
+  "news_risk_flag": false,
+  "confidence_cap": 0.75,
+  "present_timeframes": [
+    "M5",
+    "M15",
+    "H1"
+  ],
+  "event_count": 2,
+  "errors": [],
+  "quality_flags": [
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

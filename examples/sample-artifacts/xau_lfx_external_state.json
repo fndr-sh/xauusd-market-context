@@ -1,0 +1,24 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241198+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "state": "CONTEXT",
+  "summary": "Local XAU source artifacts are available for monitor-only market context.",
+  "evidence": [
+    "source_count=2",
+    "confidence_cap=0.75",
+    "M15 remains strategic; M5 is confirmation-only; H1 is context-only.",
+    "Downstream confidence is capped by Data Quality Gate.",
+    "median_latest_close=2338.83",
+    "event_risk_state=CONTEXT"
+  ],
+  "quality": {
+    "quality_flags": [
+      "MACRO_SOURCES_NOT_CONFIGURED",
+      "USD_HIGH_IMPACT_EVENT_PRESENT"
+    ],
+    "confidence_cap": 0.75,
+    "source_count": 2,
+    "missing_field_count": 0
+  }
+}

@@ -1,0 +1,3 @@
+ts_utc,currency,impact,title
+2026-06-22T07:00:00Z,USD,HIGH,Sample high impact USD event
+2026-06-23T07:00:00Z,USD,MEDIUM,Sample medium impact USD event

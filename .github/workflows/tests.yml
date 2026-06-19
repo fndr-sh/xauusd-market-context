@@ -1,0 +1,27 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e . pytest build
+      - run: python -m compileall xau_lfx scripts
+      - run: pytest
+      - run: python -m xau_lfx.pipeline validate-sources --input-dir examples/sample-data --event-file examples/sample-data/usd_events.csv
+      - run: python -m xau_lfx.pipeline run-once --input-dir examples/sample-data --event-file examples/sample-data/usd_events.csv --out-dir artifacts
+      - run: python -m xau_lfx.pipeline report --artifact-dir artifacts --write-md
+      - run: python -m xau_lfx.pipeline site --artifact-dir artifacts --out-dir site
+      - run: python scripts/check_release_readiness.py
+      - run: python -m build

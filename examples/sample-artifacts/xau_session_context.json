@@ -1,0 +1,35 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241162+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "session_state": "CONTEXT",
+  "primary_timeframe": "M15",
+  "session_ranges": {
+    "ASIA": {
+      "bar_count": 28,
+      "high": 2342.0,
+      "low": 2336.93,
+      "last_close": 2338.98,
+      "range_points": 5.07
+    },
+    "LONDON": {
+      "bar_count": 1,
+      "high": 2340.73,
+      "low": 2336.93,
+      "last_close": 2338.83,
+      "range_points": 3.8
+    },
+    "OFF_SESSION": {
+      "bar_count": 3,
+      "high": 2341.5,
+      "low": 2337.15,
+      "last_close": 2338.83,
+      "range_points": 4.35
+    }
+  },
+  "handoff_state": "CONTEXT_ONLY",
+  "confidence_cap": 0.75,
+  "quality_flags": [
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

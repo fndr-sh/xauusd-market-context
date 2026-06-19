@@ -1,0 +1,32 @@
+{
+  "ts_utc": "2026-06-19T07:49:38.241237+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "headline": "External XAU context has passed the initial data-readiness gate.",
+  "now_read": "The system can provide bounded monitor context from validated external sources.",
+  "operator_focus": [
+    "Compare M15 strategic field state against external pressure and session context.",
+    "Monitor whether M5 confirmation behavior agrees with the M15 field condition.",
+    "Reduce confidence when event risk or spread instability appears."
+  ],
+  "evidence_map": [
+    "source_count=2",
+    "confidence_cap=0.75",
+    "risk_state=CONTEXT",
+    "state=CONTEXT"
+  ],
+  "useful_limits": [
+    "Available: bounded context, evidence list, and data-quality cap.",
+    "Still excluded: centralized spot orderbook assumption and real inventory claims."
+  ],
+  "upgrade_requirements": [
+    "Configure MT5 or broker feed exporter for XAUUSD M5/M15/H1 bars and spread snapshots.",
+    "Configure one public reference family for macro or futures context.",
+    "Configure event calendar feed or manual high-impact event file.",
+    "Add historical replay samples before claiming dashboard usefulness beyond data readiness."
+  ],
+  "quality_flags": [
+    "MACRO_SOURCES_NOT_CONFIGURED",
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

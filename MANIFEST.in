@@ -1,0 +1,19 @@
+include README.md
+include LICENSE
+include NOTICE
+include DATA_LICENSE.md
+include DISCLAIMER.md
+include SECURITY.md
+include CONTRIBUTING.md
+include CHANGELOG.md
+include CODE_OF_CONDUCT.md
+include MANIFEST.in
+include RUN_XAU_EXTERNAL_WINDOWS.bat
+include RUN_XAU_SAMPLE_WINDOWS.bat
+recursive-include docs *.md
+recursive-include scripts *.py
+recursive-include examples *.md
+recursive-include examples/sample-data *.csv
+recursive-include examples/sample-artifacts *.json *.md
+recursive-include .github *.yml *.md
+recursive-include tests *.py
