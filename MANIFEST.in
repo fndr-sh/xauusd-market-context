@@ -7,6 +7,8 @@ include SECURITY.md
 include CONTRIBUTING.md
 include CHANGELOG.md
 include CODE_OF_CONDUCT.md
+include ROADMAP.md
+include MAINTAINERS.md
 include MANIFEST.in
 include RUN_XAU_EXTERNAL_WINDOWS.bat
 include RUN_XAU_SAMPLE_WINDOWS.bat

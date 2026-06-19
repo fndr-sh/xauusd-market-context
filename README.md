@@ -1,17 +1,17 @@
-# XAUUSD Market Context v1.9.0
+# XAUUSD Market Context v2.3.0
 
 [![tests](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/tests.yml/badge.svg)](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/tests.yml)
 [![pages-demo](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/pages.yml/badge.svg)](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/pages.yml)
 [![Release](https://img.shields.io/github/v/release/thanhlq8-max/xauusd-market-context)](https://github.com/thanhlq8-max/xauusd-market-context/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
-STATUS: CLI_USABILITY_POLISH
+STATUS: COMMUNITY_BACKLOG_EXECUTION
 MODE: CONTROL  
 TRADING_MODE: MONITOR_ONLY  
 AUTO_EXECUTION: NO  
 DIRECTIONAL_TRADE_CALLS: NO
 
-Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v1.9.0 adds a one-command synthetic demo, clearer generated-file paths, dedicated CLI documentation, and CLI smoke coverage. The package is a monitor-only sidecar for XAU research workflows; it does not modify the LFX-2 Pine baseline and does not place orders or produce execution instructions.
+Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v2.3.0 adds a public community backlog, maintainer policy, feedback path, and narrowly scoped issue triage. The package is a monitor-only sidecar for XAU research workflows; it uses the LFX-2 material as a semantic and safety baseline without modifying or reproducing the Pine source.
 
 ## Why this exists
 
@@ -40,7 +40,7 @@ Most retail XAUUSD workflows depend on one broker feed and opaque indicator outp
 
 ## Hard rules
 
-- Does not modify LFX-2 v7.1-F Pine source.
+- Does not modify or reproduce the LFX-2 v7.1-F/v7.2-A-R5 Pine source.
 - Does not create order execution, position sizing, or account-risk logic.
 - Does not claim centralized XAUUSD spot orderbook.
 - Does not treat CFD tick activity as centralized traded volume.
@@ -223,6 +223,9 @@ docs/ADOPTION_GUIDE.md
 docs/ISSUE_BACKLOG_SEED.md
 docs/CONTEXT_SUMMARY.md
 docs/CLI_USAGE.md
+docs/LFX_EXTERNAL_BASELINE.md
+ROADMAP.md
+MAINTAINERS.md
 ```
 
 Suggested GitHub topics:
@@ -232,6 +235,14 @@ xauusd, market-data, mt5, research, tradingview, monitor-only, csv-validation, s
 ```
 
 These resources are intentionally documentation-first. They improve discoverability and contributor onboarding without changing the monitor-only runtime contract.
+
+## Community participation
+
+- Review [`ROADMAP.md`](ROADMAP.md) before proposing a new module.
+- Use the [public issue backlog](https://github.com/thanhlq8-max/xauusd-market-context/issues) for independently scoped work.
+- Use the user workflow feedback template for setup, validation, artifact, report, or demo feedback.
+- Read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`MAINTAINERS.md`](MAINTAINERS.md) before opening a pull request.
+- Treat [`docs/LFX_EXTERNAL_BASELINE.md`](docs/LFX_EXTERNAL_BASELINE.md) as the boundary for any LFX-derived external documentation or proposal.
 
 ## License
 

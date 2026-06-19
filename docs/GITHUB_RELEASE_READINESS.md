@@ -1,6 +1,6 @@
 # GitHub Release Readiness
 
-Status: `v1.9.0-cli-usability-ready`
+Status: `v2.3.0-community-backlog-ready`
 
 ## Required checks
 
@@ -29,15 +29,20 @@ The public release pack must include:
 - `CHANGELOG.md`
 - `pyproject.toml`
 - `MANIFEST.in`
+- `ROADMAP.md`
+- `MAINTAINERS.md`
 - local CSV docs
 - artifact quality docs
 - schema reference
 - CLI usage guide
+- LFX external baseline contract
 - sample data fixtures
 - sample generated artifacts
 - GitHub issue templates
 - GitHub test workflow
 - GitHub Pages workflow
+- GitHub issue triage workflow
+- user feedback issue template
 
 ## Expected readiness result
 

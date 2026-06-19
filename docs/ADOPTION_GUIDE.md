@@ -19,7 +19,7 @@ This document explains how to evaluate and adopt `xauusd-market-context`.
 
 ## What it does not give you
 
-- no buy/sell calls;
+- no directional trade-call behavior;
 - no execution logic;
 - no position sizing;
 - no account-risk logic;
@@ -78,3 +78,11 @@ Useful public signals for the project:
 - demo screenshots or generated static outputs;
 - documented limitations and safety contract;
 - reproducible sample artifacts.
+
+## Participate
+
+- Public roadmap: `ROADMAP.md`
+- Maintainer policy: `MAINTAINERS.md`
+- LFX external boundary: `docs/LFX_EXTERNAL_BASELINE.md`
+- Curated backlog source: `docs/ISSUE_BACKLOG_SEED.md`
+- User feedback: select the user workflow feedback template when opening an issue.

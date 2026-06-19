@@ -1,5 +1,27 @@
 # Changelog
 
+## v2.3.0 - User feedback and issue backlog execution
+
+### Added
+
+- Twelve curated public issue definitions with five independently scoped `good first issue` tasks.
+- Required community labels, a user workflow feedback template, and narrow issue-triage automation.
+- `ROADMAP.md` and `MAINTAINERS.md` for contributor and release ownership.
+- `docs/LFX_EXTERNAL_BASELINE.md` to constrain external use of the supplied LFX-2 v7.1-F and v7.2-A-R5 material.
+- Phase E community acceptance tests.
+
+### Changed
+
+- Updated contributor, adoption, README, package, and release-readiness metadata for v2.3.0.
+- Recorded that Phase C v2.1.0 and Phase D v2.2.0 were explicitly skipped and are not delivered.
+
+### Preserved
+
+- Existing connector, engine, schema, artifact, CLI, report, and static-site behavior.
+- Existing monitor-only safety contract and synthetic-data policy.
+- No Pine source modification or Pine logic port.
+- No execution, account-risk, directional trade-call, or profitability claims.
+
 ## v1.9.0 - CLI usability polish
 
 ### Added

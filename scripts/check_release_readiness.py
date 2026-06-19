@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-EXPECTED_VERSION = "1.9.0"
+EXPECTED_VERSION = "2.3.0"
 EXPECTED_LICENSE_MARKER = "Apache License"
 EXPECTED_DATA_POLICY_MARKER = "synthetic fixtures"
 
@@ -20,6 +20,8 @@ REQUIRED_FILES = [
     "SECURITY.md",
     "CHANGELOG.md",
     "CODE_OF_CONDUCT.md",
+    "ROADMAP.md",
+    "MAINTAINERS.md",
     "docs/DATA_SOURCE_POLICY.md",
     "docs/LOCAL_CSV_QUICKSTART.md",
     "docs/ARTIFACT_QUALITY.md",
@@ -34,9 +36,12 @@ REQUIRED_FILES = [
     "docs/ISSUE_BACKLOG_SEED.md",
     "docs/DEMO_WALKTHROUGH.md",
     "docs/CLI_USAGE.md",
+    "docs/LFX_EXTERNAL_BASELINE.md",
     ".github/workflows/tests.yml",
     ".github/workflows/pages.yml",
+    ".github/workflows/issue-triage.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/ISSUE_TEMPLATE/user_feedback.md",
 ]
 
 REQUIRED_SAMPLE_FILES = [

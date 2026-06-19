@@ -32,6 +32,6 @@ def test_adoption_docs_preserve_monitor_only_language():
         ]
     )
     assert "monitor-only" in text
-    assert "no buy/sell" in text or "does not request buy/sell" in text
+    assert "no directional trade-call" in text
     assert "no execution" in text
     assert "profitability" in text
