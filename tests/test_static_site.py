@@ -16,7 +16,7 @@ def test_static_site_builds_from_sample_artifacts(tmp_path):
     html = index_path.read_text(encoding="utf-8")
 
     assert index_path.exists()
-    assert "XAU-LFX External Data Foundation" in html
+    assert "XAUUSD Market Context" in html
     assert "Quality" in html
     assert (site_dir / "artifacts" / "xau_artifact_quality.json").exists()
     assert (site_dir / "artifacts" / "xau_market_context_report.md").exists()

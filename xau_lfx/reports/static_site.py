@@ -72,7 +72,7 @@ def build_static_site_html(artifact_dir: str | Path, out_dir: str | Path = "site
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XAU-LFX External Data Foundation Demo</title>
+  <title>XAUUSD Market Context Demo</title>
   <style>
     :root {{ color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
     body {{ margin: 0; padding: 0; line-height: 1.55; }}
@@ -90,7 +90,7 @@ def build_static_site_html(artifact_dir: str | Path, out_dir: str | Path = "site
 <body>
 <main>
   <header>
-    <h1>XAU-LFX External Data Foundation</h1>
+    <h1>XAUUSD Market Context</h1>
     <p>Static demo generated from local XAUUSD artifacts. Monitor-only research output; no execution or account-risk logic.</p>
   </header>
 

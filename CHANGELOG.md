@@ -1,6 +1,20 @@
 # Changelog
 
-## v1.4.0 — Public GitHub publish pack
+## v1.4.1 - Public metadata hotfix
+
+### Fixed
+
+- Replaced placeholder package URLs with the public GitHub repository URLs.
+- Aligned README title with the public repository name.
+- Aligned static demo page title and heading with the public repository name.
+
+### Preserved
+
+- Existing package distribution name for v1.x continuity.
+- Monitor-only behavior.
+- No execution, account-risk, or profitability claims.
+
+## v1.4.0 - Public GitHub publish pack
 
 ### Added
 
@@ -22,7 +36,7 @@
 - No execution, account-risk, or profitability claims.
 - No mutation of the LFX-2 Pine baseline.
 
-## v1.3.0 — GitHub release readiness foundation
+## v1.3.0 - GitHub release readiness foundation
 
 ### Added
 
@@ -44,7 +58,7 @@
 - No execution, account-risk, or profitability claims.
 - No mutation of the LFX-2 Pine baseline.
 
-## v1.2.0 — Local Data Utility Foundation
+## v1.2.0 - Local Data Utility Foundation
 
 - Added MT5/local CSV ingestion for XAUUSD M5/M15/H1 OHLCV files.
 - Added broker spread CSV ingestion.
@@ -54,10 +68,10 @@
 - Added sample data fixtures.
 - Added docs and GitHub CI workflow.
 
-## v1.1.0 — User Insight Layer
+## v1.1.0 - User Insight Layer
 
 - Added human-readable monitor-only insight artifact.
 
-## v1.0.0 — External Data Foundation Skeleton
+## v1.0.0 - External Data Foundation Skeleton
 
 - Added no-source monitor skeleton and local API artifacts.

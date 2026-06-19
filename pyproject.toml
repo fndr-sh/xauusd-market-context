@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xau-lfx-external-data-foundation"
-version = "1.4.0"
+version = "1.4.1"
 description = "Monitor-only XAUUSD local data artifact generator for audited market-context research."
 readme = "README.md"
 license = "Apache-2.0"
@@ -41,10 +41,10 @@ dependencies = [
 license-files = ["LICENSE", "NOTICE"]
 
 [project.urls]
-Homepage = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation"
-Repository = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation"
-Issues = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation/issues"
-Documentation = "https://github.com/REPLACE_WITH_OWNER/xau-lfx-external-data-foundation/tree/main/docs"
+Homepage = "https://github.com/thanhlq8-max/xauusd-market-context"
+Repository = "https://github.com/thanhlq8-max/xauusd-market-context"
+Issues = "https://github.com/thanhlq8-max/xauusd-market-context/issues"
+Documentation = "https://github.com/thanhlq8-max/xauusd-market-context/tree/main/docs"
 
 [project.scripts]
 xau-lfx = "xau_lfx.pipeline:main"
