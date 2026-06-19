@@ -1,13 +1,13 @@
 # XAUUSD Market Context Report
 
-Generated: 2026-06-19T07:49:40.283084+00:00  
+Generated: 2026-06-19T17:55:25.911894+00:00  
 Mode: monitor-only research artifact  
 Symbol: XAUUSD
 
 ## Artifact Quality
 
 - Status: OK
-- Quality score: 98.43 / 100
+- Quality score: 96.33 / 100
 - Quality grade: A
 - Confidence cap: 0.75
 - Source count: 2
@@ -15,11 +15,37 @@ Symbol: XAUUSD
 ## Source Coverage
 
 - Present timeframes: M5, M15, H1
-- Freshness score: 98.85 / 100
+- Freshness score: 84.83 / 100
 - Coverage score: 100.0 / 100
 - Schema score: 100.0 / 100
 - Spread score: 86.05 / 100
 - Event score: 100.0 / 100
+
+## Context Summary
+
+- Latest close: 2338.83
+- Freshness age minutes: 655.43
+- Nearest session level: OFF_SESSION low at 2337.15, distance=1.68
+- Spread state: STABLE
+- Event risk state: CONTEXT
+- Quality status: OK
+- Quality grade: A
+
+## Confidence Explanation
+
+- M5/M15/H1 local bar coverage is complete.
+- Latest local bars are fresh relative to the 72-hour freshness window.
+- Spread source is stable enough for monitor context.
+- Event file is loaded and used as risk context only.
+
+
+## Monitor Focus
+
+- Observe behavior around OFF_SESSION low (2337.15); distance 1.68 points.
+- Compare M15 context with M5 confirmation behavior and H1 structural context.
+- Keep spread stability on the monitor list during active sessions.
+- Keep the event file current before major USD macro windows.
+
 
 ## M15 Session Map
 
@@ -40,18 +66,18 @@ Symbol: XAUUSD
 - Headline: External XAU context has passed the initial data-readiness gate.
 - Now: The system can provide bounded monitor context from validated external sources.
 
-## What To Monitor
-
-- Compare M15 strategic field state against external pressure and session context.
-- Monitor whether M5 confirmation behavior agrees with the M15 field condition.
-- Reduce confidence when event risk or spread instability appears.
-
 ## What This Artifact Cannot Claim
 
 - It cannot infer centralized spot-gold orderflow from broker CSV files.
 - It cannot infer actual dealer inventory or actual retail-side positioning.
 - It cannot provide execution instructions or profitability claims.
 - It cannot treat broker tick activity as centralized traded volume.
+
+## Limitations
+
+- Monitor-only context summary; not an execution plan.
+- Broker tick activity remains a local activity proxy, not centralized volume.
+- Session levels are references from supplied CSV data only.
 
 ## Warnings
 

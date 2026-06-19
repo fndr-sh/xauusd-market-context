@@ -1,8 +1,8 @@
 {
-  "ts_utc": "2026-06-19T07:49:38.241056+00:00",
+  "ts_utc": "2026-06-19T17:55:25.902392+00:00",
   "symbol": "XAUUSD",
   "monitor_only": true,
-  "freshness_score": 0.9885,
+  "freshness_score": 0.8483,
   "coverage_score": 1.0,
   "schema_score": 1.0,
   "source_count": 2,

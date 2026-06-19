@@ -1,10 +1,10 @@
 {
-  "ts_utc": "2026-06-19T07:49:38.240819+00:00",
+  "ts_utc": "2026-06-19T17:55:25.902199+00:00",
   "symbol": "XAUUSD",
   "monitor_only": true,
   "source_payloads": [
     {
-      "ts_utc": "2026-06-19T07:49:38.240503+00:00",
+      "ts_utc": "2026-06-19T17:55:25.901835+00:00",
       "source_id": "MT5_CSV",
       "symbol": "XAUUSD",
       "timeframe": "M15",
@@ -948,7 +948,7 @@
       "quality_flags": []
     },
     {
-      "ts_utc": "2026-06-19T07:49:38.240789+00:00",
+      "ts_utc": "2026-06-19T17:55:25.902186+00:00",
       "source_id": "EVENT_CSV",
       "symbol": "XAUUSD",
       "timeframe": "M15",

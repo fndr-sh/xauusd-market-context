@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.8.0 - Demo artifact polish
+
+### Added
+
+- Demo walkthrough for clone-to-artifact usage.
+- `examples/sample-artifacts/README.md` to explain each committed sample artifact.
+- Release-readiness check for `xau_context_summary.json` in sample artifacts.
+- Demo documentation tests.
+
+### Changed
+
+- Regenerated sample artifacts from synthetic fixture data so the committed demo output includes the context summary artifact.
+
+### Preserved
+
+- Existing runtime engine behavior.
+- Existing CSV validation behavior.
+- Existing context-summary calculation.
+- Existing monitor-only safety contract.
+- No execution, account-risk, buy/sell, or profitability claims.
+
 ## v1.7.0 - GitHub adoption pack
 
 ### Added

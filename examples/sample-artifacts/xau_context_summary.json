@@ -1,0 +1,38 @@
+{
+  "ts_utc": "2026-06-19T17:55:25.902765+00:00",
+  "symbol": "XAUUSD",
+  "monitor_only": true,
+  "latest_close": 2338.83,
+  "freshness_age_minutes": 655.43,
+  "nearest_session_level": {
+    "session": "OFF_SESSION",
+    "level": "low",
+    "price": 2337.15,
+    "distance_points": 1.68
+  },
+  "spread_state": "STABLE",
+  "event_risk_state": "CONTEXT",
+  "quality_status": "OK",
+  "quality_grade": "A",
+  "confidence_cap": 0.75,
+  "confidence_explanation": [
+    "M5/M15/H1 local bar coverage is complete.",
+    "Latest local bars are fresh relative to the 72-hour freshness window.",
+    "Spread source is stable enough for monitor context.",
+    "Event file is loaded and used as risk context only."
+  ],
+  "monitor_focus": [
+    "Observe behavior around OFF_SESSION low (2337.15); distance 1.68 points.",
+    "Compare M15 context with M5 confirmation behavior and H1 structural context.",
+    "Keep spread stability on the monitor list during active sessions.",
+    "Keep the event file current before major USD macro windows."
+  ],
+  "limitations": [
+    "Monitor-only context summary; not an execution plan.",
+    "Broker tick activity remains a local activity proxy, not centralized volume.",
+    "Session levels are references from supplied CSV data only."
+  ],
+  "quality_flags": [
+    "USD_HIGH_IMPACT_EVENT_PRESENT"
+  ]
+}

@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-EXPECTED_VERSION = "1.7.0"
+EXPECTED_VERSION = "1.8.0"
 EXPECTED_LICENSE_MARKER = "Apache License"
 EXPECTED_DATA_POLICY_MARKER = "synthetic fixtures"
 
@@ -32,6 +32,7 @@ REQUIRED_FILES = [
     "docs/MT5_EXPORT_GUIDE.md",
     "docs/ADOPTION_GUIDE.md",
     "docs/ISSUE_BACKLOG_SEED.md",
+    "docs/DEMO_WALKTHROUGH.md",
     ".github/workflows/tests.yml",
     ".github/workflows/pages.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
@@ -44,7 +45,9 @@ REQUIRED_SAMPLE_FILES = [
     "examples/sample-data/XAUUSD_spread.csv",
     "examples/sample-data/usd_events.csv",
     "examples/sample-artifacts/xau_artifact_quality.json",
+    "examples/sample-artifacts/xau_context_summary.json",
     "examples/sample-artifacts/xau_market_context_report.md",
+    "examples/sample-artifacts/README.md",
 ]
 
 FORBIDDEN_PUBLIC_FILES = [
