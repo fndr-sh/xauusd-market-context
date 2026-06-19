@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -36,9 +37,12 @@ def _to_float(value: str, column: str) -> float:
     if raw == "":
         raise CsvValidationError(f"{column} is empty")
     try:
-        return float(raw)
+        parsed = float(raw)
     except ValueError as exc:
         raise CsvValidationError(f"{column} is not numeric: {value}") from exc
+    if not math.isfinite(parsed):
+        raise CsvValidationError(f"{column} is not finite: {value}")
+    return parsed
 
 
 def _read_csv_rows(path: Path, required_columns: tuple[str, ...]) -> list[dict[str, str]]:
@@ -53,24 +57,71 @@ def _read_csv_rows(path: Path, required_columns: tuple[str, ...]) -> list[dict[s
         return list(reader)
 
 
+def _validate_strict_timestamp_order(path: Path, rows: list[dict[str, Any]]) -> None:
+    previous_ts: str | None = None
+    seen: set[str] = set()
+    for index, row in enumerate(rows, start=2):
+        ts = row["ts_utc"]
+        if ts in seen:
+            raise CsvValidationError(f"{path.name}: row {index}: duplicate ts_utc: {ts}")
+        if previous_ts is not None and ts <= previous_ts:
+            raise CsvValidationError(
+                f"{path.name}: row {index}: ts_utc must be strictly increasing; "
+                f"previous={previous_ts}, current={ts}"
+            )
+        seen.add(ts)
+        previous_ts = ts
+
+
+def _validate_ohlcv_row(path: Path, index: int, parsed: dict[str, Any]) -> None:
+    open_px = parsed["open"]
+    high_px = parsed["high"]
+    low_px = parsed["low"]
+    close_px = parsed["close"]
+    tick_volume = parsed["tick_volume"]
+
+    if high_px < low_px:
+        raise CsvValidationError(f"{path.name}: row {index}: high is below low")
+    if high_px < max(open_px, close_px):
+        raise CsvValidationError(f"{path.name}: row {index}: high is below open/close")
+    if low_px > min(open_px, close_px):
+        raise CsvValidationError(f"{path.name}: row {index}: low is above open/close")
+    if tick_volume < 0:
+        raise CsvValidationError(f"{path.name}: row {index}: tick_volume is negative")
+
+
+def _validate_spread_row(path: Path, index: int, parsed: dict[str, Any]) -> None:
+    bid = parsed["bid"]
+    ask = parsed["ask"]
+    spread_points = parsed["spread_points"]
+
+    if ask < bid:
+        raise CsvValidationError(f"{path.name}: row {index}: ask is below bid")
+    if spread_points < 0:
+        raise CsvValidationError(f"{path.name}: row {index}: spread_points is negative")
+
+
 def parse_ohlcv_csv(path: Path) -> list[dict[str, Any]]:
     rows = _read_csv_rows(path, OHLCV_REQUIRED_COLUMNS)
     parsed: list[dict[str, Any]] = []
     for index, row in enumerate(rows, start=2):
         try:
-            parsed.append(
-                {
-                    "ts_utc": _parse_utc(row["ts_utc"]),
-                    "open": _to_float(row["open"], "open"),
-                    "high": _to_float(row["high"], "high"),
-                    "low": _to_float(row["low"], "low"),
-                    "close": _to_float(row["close"], "close"),
-                    "tick_volume": _to_float(row["tick_volume"], "tick_volume"),
-                    "volume_type": "tick_volume",
-                }
-            )
+            parsed_row = {
+                "ts_utc": _parse_utc(row["ts_utc"]),
+                "open": _to_float(row["open"], "open"),
+                "high": _to_float(row["high"], "high"),
+                "low": _to_float(row["low"], "low"),
+                "close": _to_float(row["close"], "close"),
+                "tick_volume": _to_float(row["tick_volume"], "tick_volume"),
+                "volume_type": "tick_volume",
+            }
+            _validate_ohlcv_row(path, index, parsed_row)
+            parsed.append(parsed_row)
         except CsvValidationError as exc:
+            if str(exc).startswith(f"{path.name}:"):
+                raise
             raise CsvValidationError(f"{path.name}: row {index}: {exc}") from exc
+    _validate_strict_timestamp_order(path, parsed)
     return parsed
 
 
@@ -79,17 +130,20 @@ def parse_spread_csv(path: Path) -> list[dict[str, Any]]:
     parsed: list[dict[str, Any]] = []
     for index, row in enumerate(rows, start=2):
         try:
-            parsed.append(
-                {
-                    "ts_utc": _parse_utc(row["ts_utc"]),
-                    "bid": _to_float(row["bid"], "bid"),
-                    "ask": _to_float(row["ask"], "ask"),
-                    "spread_points": _to_float(row["spread_points"], "spread_points"),
-                    "spread_policy": "BROKER_SPECIFIC_SPREAD",
-                }
-            )
+            parsed_row = {
+                "ts_utc": _parse_utc(row["ts_utc"]),
+                "bid": _to_float(row["bid"], "bid"),
+                "ask": _to_float(row["ask"], "ask"),
+                "spread_points": _to_float(row["spread_points"], "spread_points"),
+                "spread_policy": "BROKER_SPECIFIC_SPREAD",
+            }
+            _validate_spread_row(path, index, parsed_row)
+            parsed.append(parsed_row)
         except CsvValidationError as exc:
+            if str(exc).startswith(f"{path.name}:"):
+                raise
             raise CsvValidationError(f"{path.name}: row {index}: {exc}") from exc
+    _validate_strict_timestamp_order(path, parsed)
     return parsed
 
 

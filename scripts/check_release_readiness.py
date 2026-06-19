@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-EXPECTED_VERSION = "1.4.1"
+EXPECTED_VERSION = "1.5.0"
 EXPECTED_LICENSE_MARKER = "Apache License"
 EXPECTED_DATA_POLICY_MARKER = "synthetic fixtures"
 

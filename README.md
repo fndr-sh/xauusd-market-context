@@ -1,12 +1,12 @@
-# XAUUSD Market Context v1.4.1
+# XAUUSD Market Context v1.5.0
 
-STATUS: PUBLIC_RELEASE_METADATA_HOTFIX  
+STATUS: SOURCE_VALIDATION_HARDENING  
 MODE: CONTROL  
 TRADING_MODE: MONITOR_ONLY  
 AUTO_EXECUTION: NO  
 DIRECTIONAL_TRADE_CALLS: NO
 
-Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v1.4.1 aligns the public repository naming, package metadata URLs, and static demo title after the initial public release. The package is a monitor-only sidecar for XAU research workflows; it does not modify the LFX-2 Pine baseline and does not place orders or produce execution instructions.
+Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v1.5.0 hardens local CSV source validation for OHLCV integrity, timestamp ordering, spread sanity, and finite numeric values. The package is a monitor-only sidecar for XAU research workflows; it does not modify the LFX-2 Pine baseline and does not place orders or produce execution instructions.
 
 ## Why this exists
 

@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.5.0 - Source validation hardening
+
+### Added
+
+- Strict OHLCV row validation for high/low/open/close consistency.
+- Duplicate and non-increasing timestamp rejection for OHLCV and spread CSV files.
+- Negative tick-volume rejection.
+- Spread sanity checks for ask/bid and negative spread points.
+- Source validation documentation.
+
+### Preserved
+
+- Monitor-only behavior.
+- Existing artifact contract.
+- No execution, account-risk, or profitability claims.
+
 ## v1.4.1 - Public metadata hotfix
 
 ### Fixed
