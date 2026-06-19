@@ -1,6 +1,6 @@
 # GitHub Release Readiness
 
-Status: `v1.4.0-public-publish-ready`
+Status: `v1.9.0-cli-usability-ready`
 
 ## Required checks
 
@@ -9,6 +9,7 @@ Run from the repository root:
 ```bash
 python -m compileall xau_lfx scripts
 PYTHONPATH=. pytest -q
+python -m xau_lfx.pipeline demo --out-dir demo-artifacts --site-dir demo-site
 python scripts/check_release_readiness.py --strict
 python -m build
 ```
@@ -31,6 +32,7 @@ The public release pack must include:
 - local CSV docs
 - artifact quality docs
 - schema reference
+- CLI usage guide
 - sample data fixtures
 - sample generated artifacts
 - GitHub issue templates

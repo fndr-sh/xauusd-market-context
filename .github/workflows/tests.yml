@@ -23,5 +23,6 @@ jobs:
       - run: python -m xau_lfx.pipeline run-once --input-dir examples/sample-data --event-file examples/sample-data/usd_events.csv --out-dir artifacts
       - run: python -m xau_lfx.pipeline report --artifact-dir artifacts --write-md
       - run: python -m xau_lfx.pipeline site --artifact-dir artifacts --out-dir site
+      - run: python -m xau_lfx.pipeline demo --out-dir demo-artifacts --site-dir demo-site
       - run: python scripts/check_release_readiness.py
       - run: python -m build

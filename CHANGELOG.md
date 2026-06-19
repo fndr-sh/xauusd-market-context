@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.9.0 - CLI usability polish
+
+### Added
+
+- `xau-lfx demo` to validate synthetic fixtures and generate JSON, Markdown, and static HTML outputs in one command.
+- Absolute generated-file paths in `run-once` and `demo` terminal output.
+- `docs/CLI_USAGE.md` with sample, validation, report, and static-site commands.
+- CLI smoke tests and a direct demo command in the GitHub Actions test matrix.
+
+### Changed
+
+- Reduced the README sample quickstart to the one-command demo path.
+- Updated release-readiness metadata and required docs for v1.9.0.
+
+### Preserved
+
+- Existing CLI commands and no-source compatibility behavior.
+- Existing connector, engine, schema, and artifact calculations.
+- Existing monitor-only safety contract.
+- No execution, account-risk, directional trade-call, or profitability claims.
+
 ## v1.8.0 - Demo artifact polish
 
 ### Added

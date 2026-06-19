@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-EXPECTED_VERSION = "1.8.0"
+EXPECTED_VERSION = "1.9.0"
 EXPECTED_LICENSE_MARKER = "Apache License"
 EXPECTED_DATA_POLICY_MARKER = "synthetic fixtures"
 
@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "docs/ADOPTION_GUIDE.md",
     "docs/ISSUE_BACKLOG_SEED.md",
     "docs/DEMO_WALKTHROUGH.md",
+    "docs/CLI_USAGE.md",
     ".github/workflows/tests.yml",
     ".github/workflows/pages.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",

@@ -12,6 +12,14 @@ source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
 pip install -e .
 ```
 
+## One-command path
+
+```bash
+xau-lfx demo
+```
+
+This validates the synthetic source set, generates the JSON and Markdown artifacts, builds `site/index.html`, and prints the absolute path of each output. The remaining sections show the equivalent commands separately for inspection and troubleshooting.
+
 ## 2. Validate sample sources
 
 ```bash

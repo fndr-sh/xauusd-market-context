@@ -1,17 +1,17 @@
-# XAUUSD Market Context v1.8.0
+# XAUUSD Market Context v1.9.0
 
 [![tests](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/tests.yml/badge.svg)](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/tests.yml)
 [![pages-demo](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/pages.yml/badge.svg)](https://github.com/thanhlq8-max/xauusd-market-context/actions/workflows/pages.yml)
 [![Release](https://img.shields.io/github/v/release/thanhlq8-max/xauusd-market-context)](https://github.com/thanhlq8-max/xauusd-market-context/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
-STATUS: DEMO_ARTIFACT_POLISH  
+STATUS: CLI_USABILITY_POLISH
 MODE: CONTROL  
 TRADING_MODE: MONITOR_ONLY  
 AUTO_EXECUTION: NO  
 DIRECTIONAL_TRADE_CALLS: NO
 
-Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v1.8.0 polishes the demo path: sample artifacts now include the context summary, the examples directory explains what each artifact is for, and the walkthrough gives new users a clone-to-report path. The package is a monitor-only sidecar for XAU research workflows; it does not modify the LFX-2 Pine baseline and does not place orders or produce execution instructions.
+Generate auditable XAUUSD market-context artifacts from local MT5/broker CSV exports, spread snapshots, and manual USD event files. v1.9.0 adds a one-command synthetic demo, clearer generated-file paths, dedicated CLI documentation, and CLI smoke coverage. The package is a monitor-only sidecar for XAU research workflows; it does not modify the LFX-2 Pine baseline and does not place orders or produce execution instructions.
 
 ## Why this exists
 
@@ -70,22 +70,10 @@ xau-lfx-api --help
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
 pip install -e .
-pip install pytest
-
-python -m xau_lfx.pipeline validate-sources \
-  --input-dir examples/sample-data \
-  --event-file examples/sample-data/usd_events.csv
-
-python -m xau_lfx.pipeline run-once \
-  --input-dir examples/sample-data \
-  --event-file examples/sample-data/usd_events.csv \
-  --out-dir artifacts
-
-python -m xau_lfx.pipeline report --artifact-dir artifacts --write-md
-python -m xau_lfx.pipeline site --artifact-dir artifacts --out-dir site
+xau-lfx demo
 ```
 
-Open `site/index.html` for the static demo. This is the same output shape intended for GitHub Pages.
+The command validates the committed synthetic fixtures, generates JSON and Markdown artifacts, prints their absolute paths, and builds `site/index.html`. Open that file for the static demo used by GitHub Pages.
 
 
 Demo walkthrough:
@@ -95,6 +83,8 @@ docs/DEMO_WALKTHROUGH.md
 ```
 
 The walkthrough explains how to rebuild sample artifacts, inspect `xau_context_summary.json`, open the generated Markdown report, and generate the static demo site without broker credentials.
+
+Complete CLI reference: [`docs/CLI_USAGE.md`](docs/CLI_USAGE.md).
 
 No-argument compatibility mode still works:
 
@@ -232,6 +222,7 @@ docs/MT5_EXPORT_GUIDE.md
 docs/ADOPTION_GUIDE.md
 docs/ISSUE_BACKLOG_SEED.md
 docs/CONTEXT_SUMMARY.md
+docs/CLI_USAGE.md
 ```
 
 Suggested GitHub topics:
