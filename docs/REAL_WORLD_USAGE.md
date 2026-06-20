@@ -60,6 +60,41 @@ artifacts/xau_session_context.json
 artifacts/xau_context_summary.json
 ```
 
+## Case 5: stale data reduces freshness
+
+**Input condition:** the newest valid OHLCV timestamp is old relative to the current UTC time.
+
+**Expected result:** `xau_data_quality.json` reports a lower `freshness_score`, and that lower source-quality input constrains `confidence_cap`. `xau_context_summary.json` exposes the observed age through `freshness_age_minutes` and explains that the local bars are aging. `xau_artifact_quality.json` reports the corresponding percentage-form `freshness_score`.
+
+The current freshness window is 72 hours. The system does not rewrite timestamps or treat an old row as current.
+
+**Practical value:** a successfully parsed file cannot appear current merely because its schema is valid.
+
+Inspect:
+
+```text
+artifacts/xau_data_quality.json: freshness_score, confidence_cap
+artifacts/xau_context_summary.json: freshness_age_minutes, confidence_explanation
+artifacts/xau_artifact_quality.json: freshness_score, quality_score
+```
+
+## Case 6: missing timeframe reduces coverage
+
+**Input condition:** one of the required M5, M15, or H1 CSV files is absent or contains no usable bars.
+
+**Expected result:** the connector records the timeframe-specific missing/empty flag. `xau_data_quality.json` omits that timeframe from `present_timeframes`, lowers `coverage_score` and `session_completeness`, and includes `MTF_COVERAGE_INCOMPLETE`. The composite artifact includes `COMPOSITE_MTF_INCOMPLETE`; if M15 is unavailable, it also includes `NO_M15_PRIMARY_BARS`.
+
+**Practical value:** downstream users can distinguish a partial multi-timeframe bundle from complete M5/M15/H1 coverage before interpreting session context.
+
+Inspect:
+
+```text
+artifacts/xau_raw_scan.json: source_payloads[].quality_flags
+artifacts/xau_data_quality.json: present_timeframes, coverage_score, session_completeness, quality_flags
+artifacts/xau_composite_ohlcv.json: timeframe_bars, quality_flags
+artifacts/xau_artifact_quality.json: coverage_score, warnings
+```
+
 ## Live OANDA Practice case
 
 The private live dashboard adds five-second OANDA Practice refresh without changing the CSV cases above. It displays:
