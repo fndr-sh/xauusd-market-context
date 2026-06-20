@@ -43,7 +43,7 @@ v2.4.0 includes:
 Do not position this as:
 
 - a profitable trading bot;
-- a buy/sell indicator;
+- a directional-call indicator;
 - a real dealer-inventory feed;
 - a real retail-positioning feed;
 - an institutional XAUUSD orderbook;
@@ -53,9 +53,11 @@ Do not position this as:
 
 The immediate goal is to make the repo useful enough that users can clone it, run the sample workflow, inspect the generated artifacts, and adapt local CSV files safely.
 
-Recommended next public milestones:
+Current progression gates:
 
-1. v1.4.0: public publish pack and first GitHub release.
-2. v1.5.0: static report polish and downloadable sample artifacts.
-3. v1.6.0: local export compatibility matrix for broker CSV shapes.
-4. v1.7.0: optional additional non-redistributed reference-source adapters.
+1. `v2.4.x`: convert the active external fork into a reviewed contribution and close only the remaining Phase F documentation gaps.
+2. `v2.5.0`: implement optional local reference-data adapters only after a separate Phase G specification is locked.
+3. `v3.0.0`: declare a stable schema, CLI, documentation, and package path only after real usage feedback supports that claim.
+4. Claude for Open Source track: record verifiable adoption and maintainer evidence, then re-check the official program criteria immediately before any application.
+
+Technical releases alone are not impact evidence. Stars, forks, external issues, external pull requests, release downloads, Pages traffic, and documented user workflows must be reported as observed facts without artificial engagement.

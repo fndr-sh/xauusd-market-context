@@ -16,6 +16,7 @@ This document explains how to evaluate and adopt `xauusd-market-context`.
 - useful context summary;
 - Markdown report output;
 - static HTML demo generation.
+- optional OANDA Practice M5/M15/H1 candle dashboard on a private host.
 
 ## What it does not give you
 
@@ -46,6 +47,21 @@ Open:
 site/index.html
 ```
 
+## Optional private live dashboard
+
+The OANDA path is separate from the synthetic demo and local CSV pipeline. It requires an OANDA Practice token stored only in the local process environment.
+
+After completing the credential steps in [`OANDA_LIVE_DASHBOARD.md`](OANDA_LIVE_DASHBOARD.md), bind the service to an explicit private address:
+
+```powershell
+.\.venv\Scripts\python.exe -m xau_lfx.web serve-oanda `
+  --host 192.168.1.20 `
+  --port 8766 `
+  --request-timeout-seconds 10
+```
+
+Open `http://192.168.1.20:8766/` from a phone or PC on the same private network. The browser receives candle/context data but never receives the OANDA token. Do not expose the service through public port forwarding.
+
 ## GitHub topics
 
 Recommended repository topics:
@@ -60,6 +76,9 @@ monitor-only
 csv-validation
 static-site
 python
+dashboard
+fastapi
+oanda
 ```
 
 Topics are set in the GitHub UI:
@@ -78,6 +97,9 @@ Useful public signals for the project:
 - demo screenshots or generated static outputs;
 - documented limitations and safety contract;
 - reproducible sample artifacts.
+- external forks that progress into reviewable pull requests;
+- release-asset downloads and documented user workflows;
+- private-dashboard feedback that contains no credential or redistributed market payload.
 
 ## Participate
 
