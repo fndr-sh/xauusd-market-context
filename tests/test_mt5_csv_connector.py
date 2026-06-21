@@ -4,6 +4,8 @@ import pytest
 
 from xau_lfx.connectors.mt5_csv import CsvValidationError, parse_ohlcv_csv, parse_spread_csv
 
+FIX_DIR = Path("tests/fixtures/malformed")
+
 
 def test_valid_mt5_ohlcv_csv_parses():
     rows = parse_ohlcv_csv(Path("examples/sample-data/XAUUSD_M15.csv"))
@@ -19,48 +21,26 @@ def test_missing_required_ohlcv_column_fails(tmp_path):
         parse_ohlcv_csv(path)
 
 
-def test_ohlcv_high_below_close_fails(tmp_path):
-    path = tmp_path / "bad_high.csv"
-    path.write_text(
-        "ts_utc,open,high,low,close,tick_volume\n"
-        "2026-01-01T00:00:00Z,100,101,99,102,10\n",
-        encoding="utf-8",
-    )
+def test_ohlcv_high_below_close_fails():
+    path = FIX_DIR / "ohlcv_bad_high.csv"
     with pytest.raises(CsvValidationError, match="high is below open/close"):
         parse_ohlcv_csv(path)
 
 
-def test_ohlcv_low_above_open_fails(tmp_path):
-    path = tmp_path / "bad_low.csv"
-    path.write_text(
-        "ts_utc,open,high,low,close,tick_volume\n"
-        "2026-01-01T00:00:00Z,100,103,101,102,10\n",
-        encoding="utf-8",
-    )
+def test_ohlcv_low_above_open_fails():
+    path = FIX_DIR / "ohlcv_bad_low.csv"
     with pytest.raises(CsvValidationError, match="low is above open/close"):
         parse_ohlcv_csv(path)
 
 
-def test_ohlcv_duplicate_timestamp_fails(tmp_path):
-    path = tmp_path / "duplicate_ts.csv"
-    path.write_text(
-        "ts_utc,open,high,low,close,tick_volume\n"
-        "2026-01-01T00:00:00Z,100,101,99,100.5,10\n"
-        "2026-01-01T00:00:00Z,100,101,99,100.5,11\n",
-        encoding="utf-8",
-    )
+def test_ohlcv_duplicate_timestamp_fails():
+    path = FIX_DIR / "ohlcv_duplicate_ts.csv"
     with pytest.raises(CsvValidationError, match="duplicate ts_utc"):
         parse_ohlcv_csv(path)
 
 
-def test_ohlcv_non_increasing_timestamp_fails(tmp_path):
-    path = tmp_path / "non_increasing_ts.csv"
-    path.write_text(
-        "ts_utc,open,high,low,close,tick_volume\n"
-        "2026-01-01T00:05:00Z,100,101,99,100.5,10\n"
-        "2026-01-01T00:00:00Z,100,101,99,100.5,11\n",
-        encoding="utf-8",
-    )
+def test_ohlcv_non_increasing_timestamp_fails():
+    path = FIX_DIR / "ohlcv_non_increasing_ts.csv"
     with pytest.raises(CsvValidationError, match="strictly increasing"):
         parse_ohlcv_csv(path)
 
@@ -82,23 +62,13 @@ def test_spread_csv_parses_and_keeps_broker_policy():
     assert rows[0]["spread_policy"] == "BROKER_SPECIFIC_SPREAD"
 
 
-def test_spread_ask_below_bid_fails(tmp_path):
-    path = tmp_path / "bad_spread.csv"
-    path.write_text(
-        "ts_utc,bid,ask,spread_points\n"
-        "2026-01-01T00:00:00Z,2000.10,2000.00,10\n",
-        encoding="utf-8",
-    )
+def test_spread_ask_below_bid_fails():
+    path = FIX_DIR / "spread_ask_below_bid.csv"
     with pytest.raises(CsvValidationError, match="ask is below bid"):
         parse_spread_csv(path)
 
 
-def test_spread_negative_points_fails(tmp_path):
-    path = tmp_path / "negative_spread.csv"
-    path.write_text(
-        "ts_utc,bid,ask,spread_points\n"
-        "2026-01-01T00:00:00Z,2000.00,2000.10,-1\n",
-        encoding="utf-8",
-    )
+def test_spread_negative_points_fails():
+    path = FIX_DIR / "spread_negative_points.csv"
     with pytest.raises(CsvValidationError, match="spread_points is negative"):
         parse_spread_csv(path)
