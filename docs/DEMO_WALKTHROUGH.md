@@ -1,4 +1,4 @@
-﻿# Demo Walkthrough
+# Demo Walkthrough
 
 This walkthrough shows the shortest path from a fresh clone to inspectable XAUUSD market-context artifacts.
 
@@ -11,6 +11,17 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
 pip install -e .
 ```
+
+## Recommended Artifact Reading Order
+
+When inspecting the generated outputs or reviewing the static demo walkthrough, a new user should explore the artifacts in this sequence to establish context properly:
+
+1. **Artifact Quality:** Inspect the data integrity, timestamp correctness, and structural checks first to verify source coverage and freshness.
+2. **Context Summary:** Read the operational macro summary, key session levels, spread states, and upcoming event-risk status.
+3. **Report:** Review the highly legible human-readable Markdown breakdown for detailed, comprehensive context analysis.
+4. **Source Policy:** Cross-reference against data compliance rules, broker limits, and synthetic redistribution baseline parameters.
+
+---
 
 ## One-command path
 
@@ -110,11 +121,10 @@ This project is a monitor-only market-context artifact generator.
 
 It does not provide:
 
-- trade execution;
-- directional trade-call calls;
-- account-risk logic;
-- position sizing;
-- profitability claims;
-- centralized spot-gold orderbook claims;
-- real dealer inventory or retail positioning claims.
-
+* trade execution;
+* directional trade-call calls;
+* account-risk logic;
+* position sizing;
+* profitability claims;
+* centralized spot-gold orderbook claims;
+* real dealer inventory or retail positioning claims.
